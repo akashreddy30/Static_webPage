@@ -40,7 +40,7 @@ ec2.create_tags(Resources=[instance['InstanceId']], Tags=[{'Key': 'Name', 'Value
 # Deploy static website to S3
 bucket_name = 'my-static-website'
 s3.create_bucket(Bucket=bucket_name, CreateBucketConfiguration={'LocationConstraint': 'us-west-2'})
-s3.put_object(Bucket=bucket_name, Key='index.html', Body='<html><body><h1>Hello world</h1></body></html>', ContentType='text/html')
+s3.put_object(Bucket=bucket_name, Key='index.html', Body='<html><body><h1>Hello world!</h1></body></html>', ContentType='text/html')
 
 # Install Nginx on EC2 instance
 ssh = paramiko.SSHClient()
